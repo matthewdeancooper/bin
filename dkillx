@@ -1,0 +1,3 @@
+#!/bin/bash
+pkill  $(ps -U root -u root -N | cut -c $((${#HOSTNAME}+22))- | dmenu -p "")
+
