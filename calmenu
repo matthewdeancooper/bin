@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-import numpy as np
-import sys
-
-print(sys.argv)
+#!/bin/bash
+# takes a equation from the command line, sends it to python and prints it
+eqn=$(echo "" | dmenu -p "Calmenu")
+result=$(python -c "import numpy as np; b=$eqn; print(str(b)) " )
+(echo $eqn "=" $result ) | dmenu -p "Calmenu"
