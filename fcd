@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+func()
+{
+local directory
+directory=$(fd . ~ -t d | fzf)
+  if [[ -n $directory ]]
+  then
+     cd -- $directory
+  fi
+}
+func
+exit 0

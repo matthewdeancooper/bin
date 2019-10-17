@@ -1,5 +1,1 @@
-#!/bin/bash
-# takes a equation from the command line, sends it to python and prints it
-eqn=$(echo "" | dmenu -p "Calmenu")
-result=$(python -c "import numpy as np; b=$eqn; print(str(b)) " )
-(echo $eqn "=" $result ) | dmenu -p "Calmenu"
+(date && acpi) | dmenu

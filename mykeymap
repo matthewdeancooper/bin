@@ -1,8 +1,9 @@
 #!/bin/bash
-    setxkbmap -option 'caps:ctrl_modifier'
-xcape -e 'Caps_Lock=Escape'
+# vim-fu: Caps = Escape and Ctrl leader
+# Other useful bindings
+# setxkbmap -option 'caps:ctrl_modifier'
+# xcape -e 'Caps_Lock=Escape'
 setxkbmap -option 'caps:ctrl_modifier'
 xcape -e 'Caps_Lock=Escape;Control_L=Escape;Control_R=Escape'
 setxkbmap -option ctrl:ralt_rctrl
 xmodmap -e "pointer = 1 25 3 4 5 6 7 8 9"
-xcape -e 'AltGr=Super_L'
