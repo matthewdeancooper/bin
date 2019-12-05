@@ -1,3 +1,0 @@
-#!/bin/bash
-ARG=$1
-termdown -s $ARG && alarm

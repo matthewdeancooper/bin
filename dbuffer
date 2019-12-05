@@ -1,2 +1,0 @@
-#!/bin/bash
-wmctrl -a $(wmctrl -l | cut -c $((${#HOSTNAME}+16))- | dmenu -p "")

@@ -1,5 +1,0 @@
-o() { local file
-
-file="$(du -a --exclude={./.cache,./.mozilla, ... } | awk '{print $2}' | fzf -e -0 -1 --color=light | awk -F: '{print $1}')"
-
-if [[ -n $file ]] then mimeo $file &>/dev/null fi }
