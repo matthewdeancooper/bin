@@ -1,0 +1,3 @@
+#!/bin/bash
+# TODO accept input output argument
+cp -r INPUT OUTPUT & progress -mp $!

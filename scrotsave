@@ -1,2 +1,2 @@
 #!/bin/bash
-scrot --select ~/media/scrot/%b%d::%H%M%S.png 
+scrot --select ~/proj/scrot/%b%d::%H%M%S.png 

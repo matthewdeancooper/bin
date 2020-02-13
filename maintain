@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Check if any systemd services have entered in a failed state:
+systemctl --failed
+
+# Look for errors in log files
+journalctl -p 3 -xb
+
+# Update mirror list
+reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+
+# List broken sym links
+find / -xtype l -print
+
+# Remove orphans
+pacman -Rns $(pacman -Qtdq)
+
+# Update
+pacman -Syu
