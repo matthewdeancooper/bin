@@ -1,0 +1,11 @@
+## NOTE
+## Need to change /usr/share/xsessions/dwm.desktop to exec this file
+
+#! /bin/bash
+
+setxkbmap -option ctrl:nocaps
+feh --bg-scale ~/Downloads/black_wallpaper.jpg
+
+exec dwm
+
+
