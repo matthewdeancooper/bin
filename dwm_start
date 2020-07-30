@@ -4,7 +4,7 @@
 #! /bin/bash
 
 setxkbmap -option ctrl:nocaps
-feh --bg-scale ~/Downloads/black_wallpaper.jpg
+feh --bg-scale ~/Pictures/black_wallpaper.jpg
 
 exec dwm
 
