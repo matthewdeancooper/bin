@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+
+import sys
+
+editor = [
+    "flake8",
+    "yapf",
+    "isort",
+    "python-language-server",
+    "neovim",
+    "ptvsd"]
+
+sci_libs = [
+    "jupyterlab",
+    "matplotlib",
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "tqdm",
+]
+
+img_libs = [
+    "scikit-image",
+    "pillow",
+    "opencv-python",
+]
+
+dicom_libs = [
+    "pydicom",
+    "pynetdicom"
+]
+
+torch_libs = [
+    "torch",
+    "torchvision" # Collection of data for vision
+]
+
+
+tf_libs = [
+    "tensorflow",
+    "pydot",  # For tf.keras.utils.plot_model
+    "graphviz"  # For tf.keras.utils.plot_model
+]
+
+dict = {
+    "sci" : sci_libs,
+    "dicom" : dicom_libs,
+    "torch" : torch_libs,
+    "tf" : tf_libs,
+    "img" : img_libs,
+}
+
+print("\nrequirements.txt")
+print("----------------")
+
+f = open("requirements.txt", "w+")
+
+for library in editor:
+    f.write(library + "\n")
+    print(library)
+
+for arg in sys.argv[1:]:
+    for library in dict[str(arg)]:
+        f.write(library + "\n")
+        print(library)
+
+f.close()
