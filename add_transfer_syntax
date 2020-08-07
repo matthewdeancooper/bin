@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+import sys
+import glob
+import os
+import pydicom
+
+DATA_PATH = sys.argv[1]
+
+root = os. getcwd()
+
+save_parent = root + "/" + DATA_PATH + "/with_transfer_syntax"
+
+if not os.path.exists(save_parent):
+    print("\nmkdir:", save_parent)
+    os.mkdir(save_parent)
+
+dcm_paths = glob.glob(root + "/" + DATA_PATH + "/*.dcm")
+
+print("\nDCM files", len(dcm_paths), "\n")
+
+for dcm_path in dcm_paths:
+    try:
+        ds = pydicom.dcmread(dcm_path, force=False)
+    except:
+        ds = pydicom.dcmread(dcm_path, force=True)
+        try:
+            ds.file_meta.TransferSyntaxUID
+        except AttributeError:
+            ds.file_meta.TransferSyntaxUID = pydicom.uid.ImplicitVRLittleEndian
+            
+    ds.fix_meta_info(enforce_standard=True)
+
+    save_path = save_parent + "/" + ds.SOPInstanceUID + ".dcm"
+
+    print(save_path)
+
+    ds.save_as(save_path, write_like_original=False)
