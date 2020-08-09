@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Client must have installed:
+# ssh (i.e. ssh client)
+# scp
+
+# Server must have installed:
+# openssh-server
+
+SERVER=$1
+IMPORT=$2
+EXPORT=$3
+USER_NAME=matthew
+IP_LAPTOP=129.168.0.14
+IP_DESKTOP=129.168.0.2
+
+if [ $SERVER == desktop ]; then
+  IP=$IP_DESKTOP
+
+elif [ $SERVER == laptop ]; then
+  IP=$IP_LAPTOP
+
+else
+  echo "Server assignment error: specify desktop or laptop"
+
+fi
+
+echo "Connecting..."
+scp $IMPORT $USER_NAME@$IP:$EXPORT
