@@ -4,8 +4,9 @@
 #! /bin/bash
 
 clipmenud &
-setxkbmap -option ctrl:nocaps
+# setxkbmap -option ctrl:nocaps
 feh --bg-scale ~/Pictures/black_wallpaper.jpg
+emacs --daemon
 
 exec dwm
 

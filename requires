@@ -50,18 +50,22 @@ dict = {
     "img" : img_libs,
 }
 
-print("\nrequirements.txt")
-print("----------------")
 
-f = open("requirements.txt", "w+")
+with open("requirements.txt", "r") as f:
+    contents = f.read()
 
-for library in editor:
-    f.write(library + "\n")
-    print(library)
+with open("requirements.txt", "a") as f:
+    for library in editor:
+        if library not in contents:
+            f.write(library + "\n")
 
-for arg in sys.argv[1:]:
-    for library in dict[str(arg)]:
-        f.write(library + "\n")
-        print(library)
+    for arg in sys.argv[1:]:
+        for library in dict[str(arg)]:
+            if library not in contents:
+                f.write(library + "\n")
 
-f.close()
+with open("requirements.txt", "r") as f:
+    print("\nrequirements.txt")
+    print("----------------")
+    contents = f.read()
+    print(contents)
