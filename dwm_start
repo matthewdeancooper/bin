@@ -3,11 +3,9 @@
 
 #! /bin/bash
 
+feh --bg-scale ~/cloud/media/black_wallpaper.jpg &
+emacs --daemon &
 clipmenud &
-# setxkbmap -option ctrl:nocaps
-feh --bg-scale ~/Pictures/black_wallpaper.jpg
-emacs --daemon
+# skippy-xd --start-daemon &
 
 exec dwm
-
-
