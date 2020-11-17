@@ -1,11 +1,10 @@
+#! /bin/bash
+
 ## NOTE
 ## Need to change /usr/share/xsessions/dwm.desktop to exec this file
 
-#! /bin/bash
-
 feh --bg-scale ~/cloud/media/black_wallpaper.jpg &
 emacs --daemon &
-clipmenud &
-# skippy-xd --start-daemon &
+#clipmenud &
 
 exec dwm
