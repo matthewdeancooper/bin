@@ -1,2 +1,2 @@
 #!/bin/bash
-scrot --select ~/Pictures/scrot/%b%d::%H%M%S.png 
+scrot --select ~/local/%b%d::%H%M%S.png 

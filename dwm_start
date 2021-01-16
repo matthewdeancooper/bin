@@ -3,7 +3,7 @@
 ## NOTE
 ## Need to change /usr/share/xsessions/dwm.desktop to exec this file
 
-feh --bg-scale ~/cloud/media/black_wallpaper.jpg &
+feh --bg-scale ~/cloud/media/wallpaper_black.jpg &
 emacs --daemon &
 #clipmenud &
 
